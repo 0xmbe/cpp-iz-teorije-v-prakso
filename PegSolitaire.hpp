@@ -18,7 +18,7 @@ enum move {
 	down,
 	left
 };
-static class ps {
+class ps {
 public:
 	const static std::array<std::array<char, 9>, 9> get_english_board();
 	static void print(const std::array<std::array<char, 9>, 9>* board);
