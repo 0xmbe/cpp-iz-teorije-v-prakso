@@ -1,7 +1,5 @@
 #include "PegSolitaire.hpp"
 
-#include <iostream> 
-#include <chrono>
 
 int main()
 {
@@ -9,7 +7,7 @@ int main()
   auto const english_board = ps::get_english_board();
 
   std::cout << "Start solving:\n";
-  ps::print(english_board);
+  ps::print(&english_board);
   std::cout << "---------------\n";
 
   auto const start = high_resolution_clock::now();
@@ -20,6 +18,7 @@ int main()
   // 
   // ps::solve(english_board, moves); or
   // const auto moves = ps::solve(english_board);
+  const auto moves = ps::solve(english_board);
 
   auto end = high_resolution_clock::now();
   auto duration_ms = duration_cast<duration<double, std::milli>>(end - start).count();
@@ -29,6 +28,9 @@ int main()
   // Add your code
   // e.g.
   // ps::print_moves(results);
+  ps::printPath(&moves);
+  ps::playPathCommands(&moves, english_board);
+
   std::cout << "Solving took: " << duration_ms << " ms\n";
 
   /*
@@ -80,5 +82,6 @@ int main()
 Solving took: 492.057 ms
   */
 
+  getchar();
   return 0;
 }
