@@ -53,10 +53,8 @@ void updatePath(std::vector<std::array<char, 5>>* path, const char lastDirection
 }
 static bool check_X_away(const std::array<std::array<char, 9>, 9>* board, const char currentRow, const char currentCol,
 	const char rowOffset, const char colOffset, const char checkValue) {
-	if ((*board)[currentRow + rowOffset][currentCol + colOffset] == checkValue) {
-		return true;
-	}
-	return false;
+	return ((*board)[currentRow + rowOffset][currentCol + colOffset] == checkValue);
+
 }
 static char remainingPieces(const std::array<std::array<char, 9>, 9>* board) {
 	char remainingPieces = 0;
