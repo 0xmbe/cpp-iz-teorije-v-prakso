@@ -74,11 +74,12 @@ static char remainingPieces(const std::array<std::array<char, 9>, 9>* board) {
 /// FOR rowOffset AND colOffset USE ONLY VALUE -2, 0, +2 CORESPONDING TO AXIS DIRECTION
 /// </summary>
 static void makePegJump(std::array<std::array<char, 9>, 9>* board, const char currentRow, const char currentCol,
-	const char rowOffset, const char colOffset, const char* setBits) {
-	(*board)[currentRow][currentCol] = setBits[0];								  // PEACE MAKING A JUMP		//setBits_normal -> '0'
-	(*board)[currentRow + rowOffset / 2][currentCol + colOffset / 2] = setBits[1];// PEACE THAT IS JUMPED OVER	//setBits_normal -> '0'
-	(*board)[currentRow + rowOffset][currentCol + colOffset] = setBits[2];		  // PEACE NEW POSITION			//setBits_normal -> '1'
+	const char rowOffset, const char colOffset) {
+	(*board)[currentRow][currentCol] = '0';								  // PEACE MAKING A JUMP		//setBits_normal -> '0'
+	(*board)[currentRow + rowOffset / 2][currentCol + colOffset / 2] =  '0';// PEACE THAT IS JUMPED OVER	//setBits_normal -> '0'
+	(*board)[currentRow + rowOffset][currentCol + colOffset] = '1';		  // PEACE NEW POSITION			//setBits_normal -> '1'
 }
+
 static void makeBoardSnapshot(std::vector<std::array<std::array<char, 9>, 9>>* boardSnapshots, const std::array<std::array<char, 9>, 9>* board) {
 	boardSnapshots->push_back(*board);
 }
