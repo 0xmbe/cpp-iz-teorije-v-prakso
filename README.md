@@ -1,4 +1,7 @@
 # Peg Solitaire solver
+## Challenge
+Challenge was to create a Peg Solitaire game solving algorithm that solves game as quickly as possible. I managed to solve it in less than 50ms.
+
 ## Prepare board
 ../PegSolitaireBoard.txt file contains board like this:
 ```cmd
